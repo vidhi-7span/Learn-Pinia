@@ -1,5 +1,6 @@
 <template>
   <AComponent />
+  <hr />
   <BComponent />
 </template>
 
