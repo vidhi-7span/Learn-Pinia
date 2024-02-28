@@ -16,6 +16,9 @@ const store = useCounterStore();
 store.$patch((state) => {
   state.items.push("React.js");
 });
+
+// Replacing the State
+store.$state = { count: 30 };
 </script>
 
 <template>
