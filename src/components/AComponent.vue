@@ -3,28 +3,28 @@ Getter become Computed Property
 Actions become Methods / Function  -->
 <script setup>
 import { useCounterStore } from "../stores/counter.js";
-// import { storeToRefs } from "pinia";
 const store = useCounterStore();
+// store.count = 100;
 
-// Wrong way to destructuring
-// const { count, doubleCount, increment } = store;
+// Mutating State Passing Object
+// store.$patch({
+//   count: store.count + 10,
+//   name: "Nidhi",
+// });
 
-// Correct way to Destructure refs
-// const { count, doubleCount } = storeToRefs(store);
-
-// Actions can be Destructured normally
-// const { increment } = store;
+// Mutating State Passing Function
+store.$patch((state) => {
+  state.items.push("React.js");
+});
 </script>
 
 <template>
   <div>A Component</div>
   <h2>Count: {{ store.count }}</h2>
   <h2>Double Count: {{ store.doubleCount }}</h2>
+  <h2>Name: {{ store.name }}</h2>
+  <h2>Items: {{ store.items }}</h2>
   <button @click="store.increment">Increment</button>
-
-  <!-- <h2>Count: {{ count }}</h2>
-  <h2>Double Count: {{ doubleCount }}</h2>
-  <button @click="increment">Increment</button> -->
 </template>
 
 <style></style>
