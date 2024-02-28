@@ -1,1 +1,1 @@
-# Learning Pinia
+# Learn Pinia
