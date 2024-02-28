@@ -26,6 +26,8 @@ store.$state = { count: 30 };
   <h2>Count: {{ store.count }}</h2>
   <h2>Double Count: {{ store.doubleCount }}</h2>
   <h2>Name: {{ store.name }}</h2>
+  <!-- using Composable in pinia store -->
+  <h2>Full Name: {{ store.name2.firstName }}</h2>
   <h2>Items: {{ store.items }}</h2>
   <button @click="store.increment">Increment</button>
 </template>
